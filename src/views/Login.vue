@@ -21,16 +21,15 @@
         </div>
       </div>
     </div>
-    <div class="form-group" style="display: flex;">
+    <!-- <div class="form-group" style="display: flex;">
       <div>
         <span>验证码：</span>
         <input type="text" id="code" v-model="code" class="code" placeholder="请输入您的验证码" />
       </div>
       <div class="login-code" @click="refreshCode">
-        <!--验证码组件-->
         <s-identify :identifyCode="identifyCode"></s-identify>9
       </div>
-    </div>
+    </div>-->
     <button class="loginBtn" @click="login">登录</button>
   </div>
 </template>
