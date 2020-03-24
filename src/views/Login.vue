@@ -1,5 +1,5 @@
 <template>
-  <div class="background">
+  <div class="background" v-title data-title="商家登录">
     <div class="itemBox">
       <div class="item">
         <div class="title">用户名</div>

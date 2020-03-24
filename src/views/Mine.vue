@@ -74,6 +74,11 @@ export default {
           icon: "http://rpic.gisea.cn/business.png",
           title: "我是商家",
           to: "Login"
+        },
+        {
+          icon: "http://rpic.gisea.cn/business.png",
+          title: "测试",
+          to: "Test"
         }
       ]
     };

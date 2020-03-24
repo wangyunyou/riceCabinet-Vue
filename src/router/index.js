@@ -47,6 +47,10 @@ const routes = [{
     path: '/Money',
     name: 'Money',
     component: () => import('../views/Money.vue')
+  },{
+    path: '/Test',
+    name: 'Test',
+    component: () => import('../views/Test.vue')
   },
   {
     path: '/404',
