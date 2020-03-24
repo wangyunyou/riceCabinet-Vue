@@ -47,7 +47,6 @@
 </template>
 <script>
 import Vue from "vue";
-import axios from "axios";
 import { Popup } from "vant";
 import { Picker } from "vant";
 import { Icon } from "vant";
@@ -76,7 +75,7 @@ export default {
     };
   },
   created() {
-    axios({
+    this.$axios({
       method: "post",
       url: "/api/rice-service/getAllCity"
     }).then(res => {
@@ -119,7 +118,7 @@ export default {
       this.pageNum++;
     },
     chooseCity() {
-      axios({
+      this.$axios({
         method: "post",
         url: "/api/rice-service/getByCityNameOperator",
         params: {

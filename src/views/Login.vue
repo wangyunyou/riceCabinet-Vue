@@ -16,11 +16,12 @@
       <div class="item">
         <div class="title">校验码</div>
         <div class="inputBox">
-          <input class="input70" type="text" placeholder="请输入验证码" />
-          <div class="input30"></div>
+          <input class="input55" type="text" placeholder="请输入验证码" />
+          <Code class="input45" :value.sync="validCode" width="40%" height="2.5rem"></Code>
         </div>
       </div>
     </div>
+
     <!-- <div class="form-group" style="display: flex;">
       <div>
         <span>验证码：</span>
@@ -37,11 +38,17 @@
 <script>
 import Vue from "vue";
 import { Dialog } from "vant";
+import Code from "@/components/Code";
 
 Vue.use(Dialog);
 export default {
+  components: {
+    Code
+  },
+
   data() {
     return {
+      validCode:'',
       motto: "wangyunyou",
       username: "",
       images: [
@@ -58,6 +65,7 @@ export default {
   methods: {
     login() {
       console.log(this.username);
+      console.log(this.validCode)
       if (this.username === "王云优") {
         Dialog.alert({
           title: "提示",
@@ -133,8 +141,8 @@ input {
   box-sizing: border-box;
 }
 
-.input70 {
-  width: 65%;
+.input55 {
+  width: 55%;
   color: #a39fa0;
   border: 1px solid #a39fa0;
   border-radius: 3px;
@@ -142,10 +150,10 @@ input {
   margin-right: 5%;
 }
 
-.input30 {
-  width: 30%;
+.input45 {
+  width: 40%;
   height: 1.5rem;
-  background: #a39fa0;
+  background: #fff;
 }
 
 .loginBtn {

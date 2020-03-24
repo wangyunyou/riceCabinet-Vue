@@ -20,7 +20,6 @@
   </div>
 </template>
 <script>
-import axios from "axios";
 
 export default {
   name: "ChooseActivity",
@@ -35,7 +34,7 @@ export default {
   created() {
     this.id = this.$route.query.id;
     this.name = this.$route.query.name;
-    axios({
+    this.$axios({
       method: "post",
       url: "/api/rice-service/getOperatorActivityDetail",
       params: {
