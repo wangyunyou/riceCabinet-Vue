@@ -55,7 +55,19 @@ export default {
   mounted() {
     this.$set(this.color, "font-weight", "bold");
 
-    console.log(this.$el)
+    let b = '{"status":"success","con":"\u63d0\u4ea4\u6210\u529f"}';
+    console.log(b);
+    console.log(JSON.parse(b));
+
+    const Zootopia = [
+      { name: "Nick", gender: 1, species: "Fox" },
+      { name: "Judy", gender: 0, species: "Bunny" }
+    ];
+    for (const { name, species } of Zootopia) {
+      console.log(`hi,I am ${name},and I am a ${species}`);
+    }
+
+
   },
   methods: {
     changeShow() {
