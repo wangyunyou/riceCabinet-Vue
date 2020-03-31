@@ -16,6 +16,9 @@ const routes = [
   {
     path: "/Mine",
     name: "Mine",
+    //别名
+    // alias: '/b',
+
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
@@ -53,7 +56,14 @@ const routes = [
   {
     path: "/Test",
     name: "Test",
-    component: () => import("../views/Test.vue")
+    component: () => import("../views/Test.vue"),
+    //路由独享的守卫
+    beforeEnter: (to, from, next) => {
+      console.log(to);
+      console.log(from);
+      console.log(next);
+      next();
+    }
   },
   {
     path: "/Test2",
@@ -67,6 +77,7 @@ const routes = [
   },
   {
     path: "*",
+    //重定向
     redirect: "/404",
     hidden: true
   }
@@ -76,13 +87,18 @@ const router = new VueRouter({
   routes
 });
 
-
 //全局前置守卫
 router.beforeEach((to, from, next) => {
   console.log(to);
   console.log(from);
   console.log(next);
-  next()
+  next();
+});
+
+//全局后置
+router.afterEach((to, from) => {
+  console.log(to);
+  console.log(from);
 });
 
 export default router;

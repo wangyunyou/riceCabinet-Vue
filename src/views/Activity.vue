@@ -153,6 +153,8 @@ export default {
       if (state == 0) {
         Toast("该运营商暂时无法提供活动");
       } else {
+        // 替换掉当前的 history 记录
+        // this.$router.replace({
         this.$router.push({
           path: "/chooseActivity",
           query: { id: id, name: realname }
