@@ -10,9 +10,6 @@ export default {
   },
   mounted() {
 
-
-
-
   },
   //导航守卫
   beforeRouteEnter(to, from, next) {
